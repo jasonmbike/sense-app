@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-title class="texto-header">Preguntas Frecuentes</ion-title>
+    <ion-buttons slot="start" style="color:#ffffff;">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+  </ion-header>
+
+  <ion-accordion-group expand="inset">
+    <ion-accordion *ngFor="let faq of faqs" [value]="faq.ID_FAQ">
+      <ion-item slot="header" color="faq">
+        <ion-label>{{ faq.TITULO }}</ion-label>
+      </ion-item>
+      <div class="acordeon" slot="content" [innerHTML]="faq.DESCRIPCION | safeHtml"></div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <div class="acordeon-final"></div>
+
+</ion-content>
+
+<div class="faq-footer">
+  <h6 class="texto-footer"> <ion-icon slot="start" src="assets/icon/logo_blanco.svg"></ion-icon> Sense - Tu bienestar comienza aquí</h6>
+</div>

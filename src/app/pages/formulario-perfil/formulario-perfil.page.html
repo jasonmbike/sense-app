@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-title class="texto-header">Editar Perfil</ion-title>
+    <ion-buttons slot="start" style="color:#ffffff;">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content *ngIf="profile !== undefined" [fullscreen]="true"> -->
+
+<ion-content >
+  <ion-header collapse="condense">
+  </ion-header>
+
+  <ion-avatar class="item-avatar" (click)="abrirSelectorDeImagen()">
+    <ng-container *ngIf="imagen_perfil === undefined || imagen_perfil === null; else perfilConImagen">
+      <!-- Mostrar el avatar de Ionic si no hay imagen de perfil -->
+      <img alt="avatar-ionic" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ng-container>
+    <ng-template #perfilConImagen>
+      <!-- Mostrar la imagen de perfil del usuario si existe -->
+      <img alt="foto-perfil" [src]="imagen_perfil" />
+    </ng-template>
+  </ion-avatar>
+  
+  
+  
+
+  <ion-card class="card">
+    <ion-list class="card ion-padding">
+    <ion-label><ion-input label="Floating label" labelPlacement="floating" placeholder="Ingrese el Nombre" [(ngModel)]="nombre_usuario">Nombre:</ion-input></ion-label>
+    <ion-label><ion-input label="Floating label" labelPlacement="floating" placeholder="Ingrese el Apellido Paterno" [(ngModel)]="ap_paterno_usuario">Apellido Materno:</ion-input></ion-label>
+    <ion-label><ion-input label="Floating label" labelPlacement="floating" placeholder="Ingrese el Apellido Materno" [(ngModel)]="ap_materno_usuario">Apellido Paterno:</ion-input></ion-label>
+    <ion-label><ion-input label="Floating label" labelPlacement="floating" placeholder="Ingrese la Edad" [(ngModel)]="edad_usuario">Edad:</ion-input></ion-label>
+    <ion-label><ion-input label="Floating label" labelPlacement="floating" placeholder="Ingrese la Nacionalidad" [(ngModel)]="nacionalidad_usuario ">Nacionalidad:</ion-input></ion-label>
+    </ion-list>
+
+    <ion-item class="card" *ngIf="generoOpciones.length > 0">
+      <ion-select label="Género" placeholder="Género" [(ngModel)]="id_genero"  >
+        <ion-select-option *ngFor="let item of generoOpciones" [value]="item.id_genero">{{item.genero}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-list class="card ion-padding">
+    <ion-label><ion-input label="Floating label" labelPlacement="floating" placeholder="Ingrese el Teléfono" [(ngModel)]="celular_usuario">Celular:</ion-input></ion-label>
+    <ion-label><ion-input label="Floating label" labelPlacement="floating" placeholder="Ingrese el Email" [(ngModel)]="email_usuario">Email:</ion-input></ion-label>
+    <ion-label><ion-input label="Floating label" labelPlacement="floating" placeholder="Ingrese la Dirección" [(ngModel)]="direccion_usuario">Dirección:</ion-input></ion-label>
+    </ion-list>
+    <ion-item *ngIf="regionOpciones.length > 0">
+      <ion-select class="card" label="Región" placeholder="Región" [(ngModel)]="id_region" (ionChange)="obtenerComunas()" >
+        <ion-select-option *ngFor="let item of regionOpciones" [value]="item.id_region">{{item.nombre}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="card" >
+      <ion-select class="card" label="Comuna" placeholder="Comuna" [(ngModel)]="id_comuna"  >
+        <ion-select-option  *ngFor="let item of comunaOpciones" [value]="item.id_comuna">{{item.nombre}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-card>
+  <div class="button-perfil">
+    <ion-button class="ion-button" (click)="actualizarUsuario()">Guardar</ion-button>
+    <ion-button class="ion-button" (click)="volveralPerfil()">Volver</ion-button>
+  </div>
+ 
+
+

@@ -1,0 +1,53 @@
+<ion-app>
+  <ion-menu menuId="main-menu" contentId="main">
+    <ion-content>
+      <div class="menu-header-bg"></div>
+      <div class="header-content">
+        <img src="../assets/images/logo_circulo.png" alt="">
+          <ion-label>
+            <h2>Bienvenido a Sense App</h2>
+          </ion-label>
+      </div>
+      <ion-list class="menu-items" lines="none">
+        <ion-item detail (click)="redirectToPage('home')">
+          <ion-icon  name="home"></ion-icon> Home
+        </ion-item>
+        <ion-item detail (click)="redirectToPage('perfil')">
+          <ion-icon name="person-sharp"></ion-icon> Mi perfil
+        </ion-item>
+        <ion-item detail (click)="redirectToPage('historial')">
+          <ion-icon name="receipt-sharp"></ion-icon> Historial
+        </ion-item>
+        <ion-item detail (click)="redirectToPage('documentacion')" *ngIf="tipo_usuario == 1">
+          <ion-icon name="document-attach"></ion-icon> Documentacion
+        </ion-item>
+        <ion-item detail (click)="redirectToPage('especialista')" *ngIf="tipo_usuario == 2">
+          <ion-icon name="person"></ion-icon> Especialistas
+        </ion-item>
+        <ion-item detail (click)="redirectToPage('faq')">
+          <ion-icon name="help-circle-sharp"></ion-icon> Preguntas Frecuentes
+        </ion-item>
+        <ion-item detail (click)="redirectToPage('login')">
+          <ion-icon name="power-sharp"></ion-icon> Cerrar Sesión
+        </ion-item>
+      </ion-list>
+    </ion-content>
+    <div>
+      <ion-list class="item-list" lines="none">
+        <ion-item >
+          <ion-icon name="logo-facebook"></ion-icon> 
+        </ion-item>
+        <ion-item >
+          <ion-icon name="logo-instagram"></ion-icon> 
+        </ion-item>
+        <ion-item >
+          <ion-icon name="logo-tiktok"></ion-icon> 
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="text-footer">
+      <h2>Tu bienestar comienza aquí</h2>
+    </div>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

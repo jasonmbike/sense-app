@@ -1,0 +1,78 @@
+ion-content {
+    --background: transparent; 
+    background-image: url('/assets/images/fondo-agua-mar.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+  }
+
+.texto-header {
+    text-align: left;
+    color: #ffffff;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+.header {
+--background: #09456C;    
+}
+
+.acordeon-final {
+  padding-bottom: 50px;
+  --background-color: transparent; 
+}
+
+.icono {
+  font-size: x-small;
+  color:#09456C;
+}
+
+.text-center{
+  text-align: center;
+}
+
+ion-avatar{
+  margin: auto;
+}
+
+.item-avatar  {     
+  width: 150px !important;  
+  height: 150px !important;
+  margin-top: 10px; 
+}
+
+
+.ion-button {
+  --background:#1CA39E;
+  --color:#ffffff;
+  margin-left: 35%;
+  flex: 1; 
+  border-radius: 35px; 
+  margin: 5px; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.card {
+  background-color: #c6e8ec;
+  color: #09456C;
+  text-align: justify;
+  overflow-y: auto; 
+}
+
+ion-select {
+  --placeholder-color: #09456C;
+  --placeholder-opacity: 100;
+  width: 100%;
+  justify-content: center;
+}
+
+.button-perfil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+ion-row, ion-col, ion-item, ion-label, ion-select, ion-list, ion-button {
+  --background: #c6e8ec;
+  --color: white;
+}

@@ -1,0 +1,17 @@
+<ion-content>
+  <div>
+    <img src="assets/images/logo_texto_azul.png" alt="">
+  </div>
+  <div>
+    <h5 class="titulo-login">Restablecer contraseña</h5>
+    <ion-item class="custom-item">
+      <ion-icon name="mail" slot="start"></ion-icon>
+      <ion-input type="email" placeholder="Ingresa tu Correo" [(ngModel)]="email" name="email" required></ion-input>
+    </ion-item>
+    <ion-button class="custom-button" (click)="enviarCorreo()">Enviar Correo</ion-button>
+    <ion-button href="/login" class="custom-button-2">
+      <ion-icon slot="start" name="home"></ion-icon> Volver al login
+     </ion-button>
+    <div *ngIf="mensaje">{{ mensaje }}</div>
+  </div>
+</ion-content>

@@ -1,0 +1,123 @@
+ion-content {
+    --background: transparent; 
+    background-image: url('/assets/images/fondo-agua-mar.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+  }
+
+.perfil-footer {
+background-color: #09456C;
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+
+.texto-footer {
+text-align: center;
+color: #ffffff;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+.texto-header {
+    text-align: left;
+    color: #ffffff;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+.header {
+--background: #09456C;    
+}
+
+.c-acordeon {
+    background-color: #c6e8ec;
+    color:#ffffff;
+}
+
+.c-item {
+  background-color: #c6e8ec;
+  color:#160D18;
+}
+
+.acordeon {
+    background-color: #c6e8ec;
+    color: #09456C;
+    text-align: justify;
+    padding: 16px;
+}
+
+.acordeon-final {
+  padding-bottom: 50px;
+  --background-color: transparent; 
+}
+
+.icono {
+  font-size: x-small;
+  color:#09456C;
+}
+
+.lista {
+    background: #c6e8ec;
+    color: #09456C;
+    text-align: justify;
+}
+
+.item-inner {
+    --background: #c6e8ec;
+    color: #09456C;
+    text-align: justify;
+    --border-color: #478f8c;
+}
+
+ion-chip {
+  --background: #09456C;
+  --color: #ffffff;
+  --text-align: center;
+}
+.text-center{
+  text-align: center;
+}
+ion-avatar{
+  margin: auto;
+}
+
+.item-avatar  {     
+  width: 150px !important;  
+  height: 150px !important;
+  margin-top: 10px; 
+  }
+
+.ion-button {
+  --background:#1CA39E;
+  --color:#ffffff;
+  margin-left: 25%;
+}
+
+.editar {
+  --background:#1CA39E;
+  --color:#ffffff;
+  margin-left: 75%;
+  --border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
+}
+
+
+.ion-chip-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px; /* Ajusta el espacio entre los chips según tus preferencias */
+}
+.chip2 {
+  --background: #1CA39E !important;
+  --text-align: center !important;
+}
+
+ion-chip {
+  min-width: 0; /* Permite que los chips se contraigan en lugar de crecer */
+  flex-grow: 1; /* Permite que los chips ocupen todo el ancho disponible */
+}
+
+.boton{
+  --background: #09456C !important;
+}

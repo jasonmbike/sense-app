@@ -1,0 +1,81 @@
+ion-content {
+    --background: transparent; 
+    background-image: url('/assets/images/fondo_login.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+}
+
+.header {
+    --background: #09456C;    
+  }
+  
+  .texto-header {
+    text-align: left;
+    color: #ffffff;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+  list-reservas {
+    --background: transparent; 
+    background-image: url('/assets/images/fondo_login.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+  }
+
+  .custom-item {
+    max-width: 400px; 
+    margin: 0 auto; 
+  }
+
+  .custom-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+  }
+  
+  ion-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  ion-card-content {
+    font-size: 1rem;
+  }
+
+  /* styles.scss */
+.custom-item {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin: 5px;
+}
+
+.custom-label {
+  font-weight: bold;
+  color: #09456C;
+}
+
+.custom-select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #09456C;
+}
+
+.select-option{
+  color: #09456C;
+  background-color: #09456C;
+}
+
+.titulo {
+  color: #09456C;
+}
+
+.custom-item ion-select-option {
+  color: #09456C !important;
+}
+
+.alert-title.sc-ion-alert-md {
+  color: #09456C !important;
+
+}

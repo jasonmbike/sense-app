@@ -1,0 +1,50 @@
+ion-content {
+    --background: white; 
+    
+  }
+
+  ion-datetime {
+ /* Permite que el calendario se quede en la parte superior */
+    position: sticky;
+    top: 0;
+    background: white; /* Puedes ajustar el fondo según tu diseño */
+    z-index: 1;
+  }
+  
+  
+  ion-content {
+    --background: transparent;
+    background-image: url("/assets/images/fondo_login.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .header {
+    --background: #09456C;    
+  }
+
+  .texto-header {
+    text-align: left;
+    color: #ffffff;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+  
+  .responsive-image {
+    max-width: 30%;
+    height: auto;
+    align-items: center;
+  }
+
+
+  .centered-image {
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+     /* Margen derecho a "auto" para centrar horizontalmente */
+  }
+
+  // .responsive-card {
+  //   max-width: 300px; /* Establece el ancho máximo que desees */
+  // }
+  
+
+  

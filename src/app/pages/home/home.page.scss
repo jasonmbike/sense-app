@@ -1,0 +1,82 @@
+  ion-card {
+    --background: #1ca39e;
+  }
+  
+  ion-card-title {
+    --color: #ffffff;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+  ion-content {
+    --background: transparent; 
+    background-image: url('/assets/images/fondo-agua-mar.jpg');
+    //background-color:#359cc487;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+  }
+
+
+  .home-footer {
+    background-color: #09456C;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .texto-footer {
+    text-align: center;
+    color: #ffffff;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+  .searchbar {
+    --background: #ffffffb5;
+    --color: #09456C;
+    --placeholder-color: #09456C;
+    --icon-color: #09456C;
+    --clear-button-color: #09456C;  
+    --border-radius: 30px;
+  }
+
+  .texto-header {
+    text-align: left;
+    color: #ffffff;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+  .header {
+    --background: #09456C;    
+  }
+  
+  ion-slides {
+    height: 160px;
+  }
+  
+  ion-slide img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .icono {
+    font-size: larger;
+    position: sticky;
+    color:#ffffff;
+  }
+
+  .boton {
+    --background: #1ca39eaf;
+    color: #ffffff
+  }
+
+
+  .div-rojo {
+    background-color: red;  /* Fondo rojo */
+    color: white;   
+    margin: 0px;
+    padding: 0px;      /* Texto blanco para mayor contraste */   
+  }
+
+  

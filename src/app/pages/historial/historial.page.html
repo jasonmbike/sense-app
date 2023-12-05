@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-title class="texto-header"> Historial </ion-title>
+    <ion-buttons slot="start" style="color:#ffffff;">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item class="custom-item">
+    <ion-label class="custom-label">Filtrar por Mes:</ion-label>
+    <ion-select [(ngModel)]="mesFiltro" placeholder="Seleccionar Mes" class="custom-select" cancelText="Cancelar" okText="Aceptar">
+      <ion-select-option *ngFor="let opcion of opcionesMeses" [value]="opcion.value">{{ opcion.label }} </ion-select-option>
+    </ion-select>
+  </ion-item>
+  
+
+  <ion-grid>
+    <ion-row *ngFor="let reserva of reservas | filterByDate: { mes: mesFiltro, anio: anioFiltro }">
+      <ion-col size="12">
+        <ion-card class="custom-card">
+          <ion-card-header>
+            <ion-card-title class="titulo">Fecha: {{ reserva.FECHA_RESERVA | date:'dd/MM/yyyy' }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="titulo">
+            <p>Hora: {{ reserva.HORA_RESERVA }}</p>
+            <p>Paciente: {{ reserva.NOMBRE_USUARIO }} {{ reserva.AP_PATERNO_USUARIO }} {{ reserva.AP_MATERNO_USUARIO }}</p>
+            <p>Especialista: {{ reserva.NOMBRE_ESPECIALISTA }} {{ reserva.AP_PATERNO_ESPECIALISTA }} {{ reserva.AP_MATERNO_ESPECIALISTA }}</p>
+            <p>Estado: {{ reserva.ESTADO }}</p>
+            <p>Tipo de Consulta: {{ reserva.TIPO_CONSULTA }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

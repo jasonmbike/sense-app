@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-title class="texto-header">Documentación</ion-title>
+    <ion-buttons slot="start" style="color:#ffffff;">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Certificado de Acreditación</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Aqui deberas adjuntar el certificado que acredita tu especialidad y el ejercer la profesión.
+      <p>*El archivo debe ser en formato pdf*</p>
+    </ion-card-content>
+    <ion-button (click)="onFileInput(1, 1)" class="custom-button">Adjuntar Archivo
+      <input type="file" (change)="onFileInputChange($event, 1)" accept=".pdf" style="display: none" #fileInput1>
+    </ion-button>
+    <ul>
+      <li *ngFor="let fileName of selectedFileNames1">Archivo seleccionado:{{ fileName }}</li>
+    </ul>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Certificado de Antecedentes</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Aqui deberas adjuntar el certificado de antecedentes otorgado por SRCEI.
+      <p>*El archivo debe ser en formato pdf*</p>
+    </ion-card-content>
+    <ion-button (click)="onFileInput(2, 2)" class="custom-button">Adjuntar Archivo
+      <input type="file" (change)="onFileInputChange($event, 2)" accept=".pdf" style="display: none" #fileInput2>
+    </ion-button>
+    <ul>
+      <li *ngFor="let fileName of selectedFileNames2">Archivo seleccionado:{{ fileName }}</li>
+    </ul>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Titulo o diplomado</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Aqui deberas adjuntar tu titulo o diplomado correspondiente.
+      <p>*El archivo debe ser en formato pdf*</p>
+    </ion-card-content>
+    <ion-button (click)="onFileInput(3, 3)" class="custom-button">Adjuntar Archivo
+      <input type="file" (change)="onFileInputChange($event, 3)" accept=".pdf" style="display: none" #fileInput3>
+    </ion-button>
+    <ul>
+      <li *ngFor="let fileName of selectedFileNames3">Archivo seleccionado:{{ fileName }}</li>
+    </ul>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Otro Archivo</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Aqui podras adjuntar cualquier otro archivo.
+      <p>*El archivo debe ser en formato pdf*</p>
+    </ion-card-content>
+    <ion-button (click)="onFileInput(4, 4)" class="custom-button">Adjuntar Archivo
+      <input type="file" (change)="onFileInputChange($event, 4)" accept=".pdf" style="display: none" #fileInput4>
+    </ion-button>
+    <ul>
+      <li *ngFor="let fileName of selectedFileNames4">Archivo seleccionado: {{ fileName }}</li>
+    </ul>
+  </ion-card>
+
+  <!-- Botón para enviar los archivos -->
+  <ion-button (click)="enviarArchivos()" expand="block" class="custom-button">Enviar Archivos</ion-button>
+</ion-content>

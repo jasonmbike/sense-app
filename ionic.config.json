@@ -1,0 +1,7 @@
+{
+  "name": "sense",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

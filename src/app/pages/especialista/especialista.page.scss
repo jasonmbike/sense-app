@@ -1,0 +1,103 @@
+.imagen-card {
+  padding-top: 10px;
+  width: 100px; 
+  height: auto; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.circular-image {
+  border-radius: 50%;  
+  overflow: hidden;  
+  width: 125px;  
+  height: 135px; 
+}
+
+ion-card-title {
+    text-align: center;
+    color: white;
+    
+}
+
+.header {
+  --background: #09456C;    
+}
+
+.texto-header {
+  text-align: left;
+  color: #ffffff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.subtitle-box {
+    border: 2px solid #3498db;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: box-shadow 0.3s ease; /* Transición de la sombra */
+    margin-top: 10px;
+    margin-inline: auto;
+  }
+  
+  .subtitle-box:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el mouse */
+  }
+  
+  
+
+ion-card {
+    width: 70%;
+    display: block;
+    margin-inline: auto;
+    //background-image: url('/assets/images/fondo_login.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    border-radius: 20px;
+    background-color: #1CA39E;
+}
+
+.color-estrellas {
+    color: yellow;
+  }
+  
+  .star-medium {
+    color: gray;
+  }
+
+  ion-icon{
+    padding-top: 2px;
+    color: #1CA39E ;
+  }
+  
+  ion-card-content {
+    color: white;
+  }
+
+  .custom-button {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    --border-radius: 23px;
+    margin-inline: 10px;
+    padding-top: 5px;
+    --background: #026F6E;
+    font-family:Arial, Helvetica, sans-serif;
+    height: 45px;
+}
+
+ion-content {
+    --background: transparent; 
+    background-image: url('/assets/images/fondo_login.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+}
+
+ion-infinite-scroll-content.custom-infinite-scroll {
+  --ion-color-step-600: white;  /* Establece el color del texto a blanco */
+}
+
+ion-infinite-scroll-content.custom-infinite-scroll ion-spinner {
+  color: white; /* Establece el color del spinner a blanco */
+}

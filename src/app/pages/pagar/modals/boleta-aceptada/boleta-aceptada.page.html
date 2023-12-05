@@ -1,0 +1,71 @@
+<ion-content>
+  
+  
+  <ion-grid style="padding: 0px;">
+
+    <ion-row class="ion-justify-content-center" style="background: rgb(1, 160, 1);">
+      <ion-col style="background: rgb(1, 160, 1);">
+        <div class="ion-text-center">
+          <ion-text class="texto-modal-update-1">Tu recibo</ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row style="background: rgb(1, 160, 1);">
+      <ion-col style="background: rgb(1, 160, 1);">
+        <div class="ion-text-center">
+          <ion-text class="texto-modal-dinero">${{ monto }}</ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="background: rgb(1, 160, 1);" class="ion-justify-content-center">
+      <ion-col style="background: rgb(1, 160, 1);" size="2">
+        <ion-img src="assets/images/factura.png"></ion-img>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="background: rgb(1, 160, 1);">
+      <ion-col style="background: rgb(1, 160, 1);">
+        <div class="ion-text-center">
+          <ion-text class="texto-modal-pagado">Pagado</ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-list lines="inset">
+      <ion-item>
+        <ion-label class="ion-label" >Codigo de autorización</ion-label> <ion-label class="ion-text-end ion-label">{{ codigoAutorizacion }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label class="ion-label">Fecha de transacción</ion-label> <ion-label class="ion-text-end ion-label">{{ fecha }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label class="ion-label">Ultimos 4 numeros de la tarjeta</ion-label> <ion-label class="ion-text-end ion-label">{{ numeroTarjeta }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label class="ion-label">Orden de compra</ion-label> <ion-label class="ion-text-end ion-label">{{ ordenCompra }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label class="ion-label">Tipo de pago</ion-label> <ion-label class="ion-text-end ion-label">{{ tipoPago }}</ion-label>
+      </ion-item>
+    </ion-list>
+
+    
+
+    
+
+    <ion-row class="fondo-boton" style="padding: 0px;">
+      <ion-col class="ion-text-center" style="padding: 0px;">
+        <ion-button class="boton-modal" style="width: 200px;"  shape="round" (click)="regresar()">Volver</ion-button>
+      </ion-col>
+    </ion-row>
+    
+
+    
+      
+  </ion-grid>
+</ion-content>
+

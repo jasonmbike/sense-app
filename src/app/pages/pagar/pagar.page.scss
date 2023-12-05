@@ -1,0 +1,46 @@
+.mi-row {
+    border: 0px solid #000; /* Agrega un borde de 1 píxel de ancho en color negro */
+    border-radius: 20px; /* Agrega esquinas redondeadas con un radio de 5 píxeles */
+    padding: 10px; /* Opcional: agrega relleno para separar el contenido del borde */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+  }
+
+
+  .titulo-row {
+    
+     /* Opcional: agrega relleno para separar el contenido del borde */
+    
+    margin: 10px;
+    margin-top: 0px;
+  }
+
+  .titulo {
+
+    font-family:Cabin !important;
+    font-size:2.3em;
+    color: rgb(99, 98, 98);
+    margin-top: 0px;
+    
+
+  }
+
+  .subtitulo-metodopago {
+
+    font-family:Cabin !important;
+    font-size:1em;
+    color: rgb(99, 98, 98);
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    
+
+  }
+
+  .datosreserva {
+    font-family:Cabin !important;
+    font-size:1em;
+    color: rgb(99, 98, 98);
+    margin-left: 10px;
+    margin-top: 30px;
+  }

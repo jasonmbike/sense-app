@@ -1,0 +1,52 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid [fixed]="true">
+
+    <ion-row class="titulo-row">
+      <h2 class="titulo">Confirmar Reserva</h2>
+    </ion-row>
+
+    <ion-row class="subtitulo-metodopago">
+      <p style="margin: 0px;">Metodo de pago</p>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center mi-row">
+      
+      <ion-img src="/assets/images/webpay.png"></ion-img>
+      
+    </ion-row>
+
+    <ion-row class="datosreserva">
+      <p style="margin: 0px;">Datos de la reserva</p>
+    </ion-row>
+    
+      <ion-list lines="inset">
+        <ion-item>
+          <ion-label >Hora seleccionada</ion-label> <ion-label class="ion-text-end">{{ hora }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Dia seleccionado</ion-label> <ion-label class="ion-text-end">{{ selectedDate }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Modalidad</ion-label> <ion-label class="ion-text-end">{{ tipo }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Valor</ion-label> <ion-label class="ion-text-end">${{ tarifa }}</ion-label>
+        </ion-item>
+      </ion-list>
+
+      
+      <ion-button style="margin: 10px; margin-top: 50px;" (click)="openBrowser()"  color="success" expand="block" shape="round" fill="solid">Pagar</ion-button>
+      
+      
+
+
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,105 @@
+* {
+    font-family: lato;
+}
+
+.menu-header-bg {
+    height: 180px;
+    width: 350px;
+    background: #1CA39E;
+    background: #1CA39E;
+    box-shadow: 0px 1px 10px rgba(98, 140, 255, 0.5);
+    transform: rotate(-15deg);
+    border-radius: 10px 10px 10px 50px;
+    margin-left: -18px;
+    margin-top: -50px;
+    margin-bottom: 60px;
+    color:#ffffff;
+}
+
+.header-content{
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+
+    img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 7px solid #026F6E;
+    }
+
+    h2 {
+        font-weight: 300;
+        color: white;
+        padding-left: 12px;
+        font-size: 17px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 12px;
+        color: white;
+        font-weight: 100;
+        letter-spacing: 0.4px;
+    }
+}
+
+.menu-items{
+    margin: 0px;
+
+    ion-icon {
+        margin-right: 20px;
+        color: #026F6E;
+    }
+
+    ion-item{
+        padding-left: 20px;
+        margin-bottom: 10px;
+    }
+
+    ion-menu-button {
+      color: #ffffff;
+    }
+
+}
+
+h2 {
+    text-align: center;
+    color:#026F6E;
+    font-size: 17px;
+    font-family: 'cursive';
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .item-list {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+  }
+  
+  ion-item {
+    /* Opcional: Ajusta el espacio entre los elementos */
+    margin-right: 10px;
+  }
+  
+  ion-icon[name="logo-facebook"] {
+    color: #1877f2; 
+  }
+
+ /* Estilo para el ícono de Instagram */
+ion-icon[name="logo-instagram"] {
+    color: #f055cc; 
+  }
+  
+  /* Estilo para el ícono de TikTok */
+  ion-icon[name="logo-tiktok"] {
+    color: #080808; 
+  }
+  
+  
+

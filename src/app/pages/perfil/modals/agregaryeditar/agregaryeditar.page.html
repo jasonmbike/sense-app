@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-title class="texto-header">Añade o quita</ion-title>
+    <ion-buttons slot="end">
+      <ion-button style="color: white;" (click)="dismiss()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-col size="12" *ngIf="personalidadess">
+
+  <ion-list>
+
+    <!-- Contenido del list plegable -->
+    <ion-item>
+      <div class="ion-chip-wrap">
+        <ion-chip *ngFor="let personalidad of personalidades" [color]="personalidad.seleccionado ? 'success' : 'medium'" (click)="seleccionarChip(personalidad)">
+          <ion-label>{{ personalidad.personalidad }}</ion-label>
+        </ion-chip>
+      </div>
+    </ion-item>
+  </ion-list>
+  </ion-col>
+
+  <ion-col size="12" *ngIf="hobbiess">
+
+    <ion-list>
+      <!-- Encabezado del list plegable -->  
+      <!-- Contenido del list plegable -->
+      <ion-item>
+        <div class="ion-chip-wrap" >
+            <ion-chip *ngFor="let hobbie of hobbies" [color]="hobbie.seleccionado ? 'success' : 'medium'" (click)="seleccionarChip(hobbie)">
+            <ion-label>{{ hobbie.hobbie }}</ion-label>
+          </ion-chip>
+        </div>
+        <!-- Otros elementos que desees -->
+      </ion-item>
+    </ion-list>
+    </ion-col>
+
+    <ion-row class="ion-text-center">
+      <ion-col class="ion-text-center">
+      <ion-button class="boton" shape="round" (click)="saveChanges()">Guardar Cambios</ion-button>
+    </ion-col>
+    </ion-row>
+  </ion-content>

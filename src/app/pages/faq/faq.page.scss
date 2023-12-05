@@ -1,0 +1,50 @@
+ion-content {
+    --background: transparent; 
+    background-image: url('/assets/images/fondo-agua-mar.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+  }
+
+.faq-footer {
+background-color: #09456C;
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+
+.texto-footer {
+text-align: center;
+color: #ffffff;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+.texto-header {
+    text-align: left;
+    color: #ffffff;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+.header {
+--background: #09456C;    
+}
+
+ion-item {
+    background-color: #1CA39E;
+    color:#ffffff;
+}
+
+.acordeon {
+    background-color: #c6e8ec;
+    color: #09456C;
+    text-align: justify;
+    padding: 16px;
+}
+
+.acordeon-final {
+  padding-bottom: 50px;
+  --background-color: transparent; 
+}
+
+ion-icon.icono {
+  font-size: x-small;
+}

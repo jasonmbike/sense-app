@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-title class="texto-header"> Reservas </ion-title>
+    <ion-buttons slot="start" style="color:#ffffff;">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-grid [fixed]="true">
+    <ion-row class="ion-justify-content-center">
+      
+      <ion-datetime presentation="date"  color="rose" [highlightedDates]="highlightedDates"  (ionChange)="onDateChange($event)"></ion-datetime>      
+    </ion-row>
+    <br>
+    <ion-row class="ion-justify-content-center" style="flex-flow: column;">
+      <ion-card *ngFor="let hora of horasDisponibles">
+        
+        <ion-row style="margin-left: 5px; margin-right: 5px;">
+          <ion-col style="display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: flex-start;">
+            <h1 style="margin-bottom: 0px; margin-top: 0px;">{{ hora.hora }}</h1>
+          
+            <p style="margin: 0px;">{{ hora.tipo }}</p>
+          </ion-col>
+          <ion-col style="align-items: end;display: flex;flex-direction: column;justify-content: center;">
+            <ion-img *ngIf="hora.disponible; else noDisponible" src="/assets/icon/comprobado.png" class="responsive-image"></ion-img>
+            <ng-template #noDisponible>
+              <ion-img src="/assets/icon/cancelar.png" class="responsive-image"></ion-img>
+            </ng-template>
+            
+          </ion-col>
+        </ion-row>
+        <span hidden>{{ id }}</span>
+        <span hidden>{{ selectedDate }}</span>
+        <ion-card-content class="responsive-card" style="padding: 0px;">
+          <ion-row class="ion-justify-content-between">
+            <ion-col style="
+            display: flex;
+            align-items: center;
+        ">
+              <h2>Valor: {{ tarifa }}</h2>
+            </ion-col>
+            <ion-col style="text-align: end;">
+              <ion-button  shape="round" [disabled]="!hora.disponible" (click)="reservarHorario(hora,id, selectedDate,tarifa)" fill="solid">Reservar</ion-button>
+            </ion-col>
+          </ion-row>
+          
+          
+        </ion-card-content>
+        
+        
+        
+
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>

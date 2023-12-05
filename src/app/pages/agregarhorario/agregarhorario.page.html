@@ -1,0 +1,172 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="color: white;">
+    <ion-title>Crear horario</ion-title>
+    <ion-buttons slot="start" style="color:#ffffff;">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid style="background-color: #1CA39E; padding: 10px; border-radius: 10px; margin: 5px;" *ngIf="showTopSection" class="fade-out-slide-up slide-down">
+
+    <ion-row >
+      <ion-col size="12" >
+        <ion-item >
+          <ion-label >Duración de cada sesión</ion-label>
+          <ion-select [(ngModel)]="selectedDuration" placeholder="Tiempo">
+            <ion-select-option value="30">30 min</ion-select-option>
+            <ion-select-option value="45">45 min</ion-select-option>
+            <ion-select-option value="60">1 hr</ion-select-option>
+            <ion-select-option value="90">1 hr 30 min</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row *ngFor="let day of daysOfWeek">
+      <ion-col size="2.5">
+        <ion-text style="color: white;">{{ day }}</ion-text>
+      </ion-col>
+    
+      <ion-col size="3.70">
+        <ion-item>
+          <ion-select [(ngModel)]="selectedStartTime[day]" placeholder="Inicio" [disabled]="!selectedDuration || areSelectorsDisabled[day]">
+            <ion-select-option *ngFor="let hour of hours" [value]="hour">{{ hour }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    
+      <ion-col size="3.70">
+        <ion-item>
+          <ion-select [(ngModel)]="selectedEndTime[day]" (ionChange)="validateTimeRange(day)" placeholder="Fin" [disabled]="!selectedDuration || areSelectorsDisabled[day]">
+            <ion-select-option *ngFor="let hour of hours" [value]="hour">{{ hour }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    
+      <ion-col size="1">
+        <ion-icon style="color: white;" (click)="!selectedDuration || toggleDaySelector(day)" [name]="areSelectorsDisabled[day] ? 'checkmark-circle-outline' : 'close-circle-outline'" size="large" ></ion-icon>
+      </ion-col>
+      <ion-col size="1">
+        <ion-icon  style="color: white;" (click)="!selectedDuration || copyHoursToAllDays(day) " name="copy-outline" size="large" ></ion-icon>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Tiempo entre sesiones</ion-label>
+          <ion-select [(ngModel)]="DuracionEntreSesiones" [disabled]="!selectedDuration" placeholder="Tiempo">
+            <ion-select-option value="15">15 min</ion-select-option>
+            <ion-select-option value="30">30 min</ion-select-option>
+            <ion-select-option value="60">1 hr</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  
+
+
+  
+<ion-row>
+  <ion-col  class="ion-text-center">
+
+  <ion-button class="ion-text-center" *ngIf="showTopSection" (click)="generarhorario(); mostrarBottomSection();" shape="round">Siguiente</ion-button>
+
+  <ion-button class="ion-text-center" *ngIf="!showTopSection && showBottomSection" (click)="ocultarBottomSection(); mostrarTopSection();" shape="round"  class="slideDown" >Volver a primera seccion</ion-button>
+  </ion-col>
+</ion-row>
+  <ion-grid style="background-color: #1CA39E; padding: 10px; border-radius: 10px; margin: 5px;" *ngIf="showBottomSection && !showTopSection" class="fade-out-slide-up slide-down">
+
+    <ion-list style="padding: 0px;" *ngFor="let day of getDaysWithSchedule()">
+      <ion-item (click)="toggleDay(day)">
+        <ion-label>{{ day }}</ion-label>
+        <ion-icon slot="end" [name]="expandedDays[day] ? 'chevron-up' : 'chevron-down'"></ion-icon>
+      </ion-item>
+    
+      <ion-list style="padding: 0px;" *ngIf="expandedDays[day]">
+        <ion-item>
+          <ion-label>Cambiar día completo</ion-label>
+          <ion-select #mySelect [(ngModel)]="sessionTipoSelections[day].tipoDia" (ionChange)="changeDayType(day)" placeholder="Tipo del día">
+            <ion-select-option value="presencial">Presencial</ion-select-option>
+            <ion-select-option value="online">Online</ion-select-option>
+          </ion-select>
+        </ion-item>
+        
+        <ion-item *ngFor="let session of schedule[day]; let i = index">
+          <ion-label>{{ session.hora }}</ion-label>
+          <ion-select [(ngModel)]="sessionTipoSelections[day].tiposSesion[i]" placeholder="Tipo" (ionChange)="updateSchedule(day, i)">
+            <ion-select-option value="presencial">Presencial</ion-select-option>
+            <ion-select-option value="online">Online</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    
+    </ion-list>
+
+
+  </ion-grid>
+
+  <ion-row>
+    <ion-col  class="ion-text-center">
+
+  <ion-button *ngIf="showBottomSection && !showTopSection" (click)="mostrarterceraseccion()" shape="round">Mostrar 3ra seccion</ion-button>
+  <ion-button *ngIf="showThirdSection && !showBottomSection" (click)="ocultarThirdSection(); mostrarBottomSection();" shape="round">Volver a segunda seccion</ion-button>
+  </ion-col>
+  </ion-row>
+
+  <ion-grid style="background-color: #1CA39E; padding: 10px; border-radius: 10px; margin: 5px;" *ngIf="showThirdSection && !showBottomSection" class="fade-out-slide-up slide-down">
+
+    
+
+    <ion-row>
+    <ion-col size="12">
+      <ion-item>
+        <ion-label>Meses</ion-label>
+        <ion-select [(ngModel)]="selectedMonths" placeholder="meses">
+          <ion-select-option [value]="null">Ninguno</ion-select-option>
+          <ion-select-option value="1">1 mes</ion-select-option>
+          <ion-select-option value="2">2 meses</ion-select-option>
+          <!-- Agrega más opciones según tus necesidades -->
+        </ion-select>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="12">
+      <ion-item>
+        <ion-label>Semanas</ion-label>
+        <ion-select [(ngModel)]="selectedWeeks" placeholder="semanas">
+          <ion-select-option [value]="null">Ninguna</ion-select-option>
+          <ion-select-option value="1">1 semana</ion-select-option>
+          <ion-select-option value="2">2 semanas</ion-select-option>
+          <!-- Agrega más opciones según tus necesidades -->
+        </ion-select>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  </ion-grid>
+  
+  
+
+
+  <ion-row>
+    <ion-col  class="ion-text-center">
+
+  <ion-button *ngIf="showThirdSection" (click)="generarHorariofinal()" shape="round">Finalizar</ion-button>
+  
+</ion-col>
+</ion-row>
+  
+
+
+
+
+
+</ion-content>

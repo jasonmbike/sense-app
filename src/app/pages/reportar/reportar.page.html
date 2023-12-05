@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-title class="texto-header">Reportar</ion-title>
+    <ion-buttons slot="start" style="color:#ffffff;">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+  </ion-header>
+  
+  <ion-card class="card">
+    <!-- <ion-card-header>
+      <ion-card-title class="title">Reportar</ion-card-title>
+    </ion-card-header>
+   -->
+    <ion-card-content>
+    <div class="card-div">Completa el formulario para denunciar a un usuario que incumpla las Normas de Convivencia, Términos y Condiciones de Sense. Tu solicitud será revisada y analizada por nuestro equipo de trabajo. Recibirás una respuesta por correo electrónico una vez cerrado el caso.</div>
+    
+    <h6 class="subtitle"><b>¿Qué quieres reportar?</b></h6>
+    <ion-radio-group value="reportar">
+        <ion-radio value="first">Comportamiento inadecuado</ion-radio><br />
+        <ion-radio value="second">Error en Cobro de Tarifas</ion-radio><br />
+        <ion-radio value="third">Fraude</ion-radio><br />
+        <ion-radio value="fourth">Información Falsa</ion-radio>
+      </ion-radio-group>
+
+    <ion-item class="list">
+      <ion-textarea class="list" label="Stacked label" labelPlacement="stacked" placeholder="Describe la situación ocurrida"></ion-textarea>
+    </ion-item>
+    
+    <ion-item>
+      <ion-textarea class="list" label="Stacked label" labelPlacement="stacked" placeholder="Ingresa el nombre del usuario o especialista"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea class="list" label="Stacked label" labelPlacement="stacked" placeholder="Fecha del incidente"></ion-textarea>
+    </ion-item>
+
+    
+    <ion-button expand="block" class="ion-button"><ion-icon name="paper-plane"></ion-icon> Enviar</ion-button>
+
+    </ion-card-content>
+  </ion-card>
+
+
+
+
+</ion-content>
+
+<div class="perfil-footer">
+  <h6 class="texto-footer"> <ion-icon slot="start" src="assets/icon/logo_blanco.svg"></ion-icon> Sense - Tu bienestar comienza aquí</h6>
+</div>

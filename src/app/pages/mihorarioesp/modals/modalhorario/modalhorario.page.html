@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar hora</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Disponibilidad</ion-label>
+    <ion-button [color]="disponibilidad === 'disponible' ? 'success' : 'medium'" (click)="disponibilidad = 'disponible'">
+      Disponible
+    </ion-button>
+    <ion-button [color]="disponibilidad === 'no disponible' ? 'danger' : 'medium'" (click)="disponibilidad = 'no disponible'">
+      No Disponible
+    </ion-button>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Tipo de Sesión</ion-label>
+    <ion-button [color]="tipoSesion === 'presencial' ? 'success' : 'medium'" (click)="tipoSesion = 'presencial'">
+      Presencial
+    </ion-button>
+    <ion-button [color]="tipoSesion === 'online' ? 'success' : 'medium'" (click)="tipoSesion = 'online'">
+      Online
+    </ion-button>
+  </ion-item>
+
+  <ion-row class="ion-text-center">
+    <ion-col class="ion-text-center">
+    <ion-button class="boton" shape="round" (click)="saveChanges()">Guardar Cambios</ion-button>
+  </ion-col>
+  </ion-row>
+  
+</ion-content>

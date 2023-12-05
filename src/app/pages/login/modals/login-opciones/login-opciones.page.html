@@ -1,0 +1,24 @@
+<ion-content>
+  <div>
+    <img src="assets/images/logo_texto_azul.png" alt="">
+   </div>
+   <div>
+    <h5 class="titulo-login">Qué tipo de usuario eres?</h5>
+   
+   </div>
+   <div class="icon-container">
+    <div>
+      <img class="icono-usuario" src="assets/icon/perfil.png" alt="">
+      <ion-button fill="outline" class="custom-button-2" (click)="seleccionarTipoUsuario('especialista')">Soy Especialista</ion-button>
+    </div>
+    <div>
+      <img class="icono-usuario" src="assets/icon/cliente.png" alt="">
+      <ion-button fill="outline" class="custom-button-2" (click)="seleccionarTipoUsuario('cliente')">Soy Cliente</ion-button>
+    </div>
+    
+   </div>
+   <ion-button href="/login" class="custom-button">
+    <ion-icon slot="start" name="home"></ion-icon> Volver al login
+   </ion-button>
+</ion-content>
+

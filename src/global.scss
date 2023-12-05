@@ -1,0 +1,250 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import '@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+// LOADING [inicio]
+.loading-contenido{
+  background-color:transparent;
+  --width: 25vw;
+  --height: 25vw;
+  @media (min-width: 721px) and (max-width: 960px) {
+    --width: 15vw;
+    --height: 15vw;
+  }
+  @media (min-width: 961px) and (max-width: 1140px) {
+    --width: 15vw;
+    --height: 15vw;
+  }
+  @media (min-width: 1141px) and (max-width: 1280px){
+    --width: 10vw;
+    --height: 10vw;
+  }
+  @media (min-width: 1281px){
+    --width: 8vw;
+    --height: 8vw;
+  }
+  .loading-wrapper{
+    border-radius: 50%;
+    background-image:url(assets/images/logo_texto_azul.png); //cambiar el logo cuando se tenga
+    background-repeat: no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+// LOADING [FIN]
+
+.alert-custom {
+  .alert-wrapper {
+    background-image:url(assets/images/fondo_login.png); /* Cambia el color de fondo */
+    border-radius: 10px; /* Cambia el radio de borde */
+  }
+
+  .alert-button {
+    color: #fff; /* Cambia el color del texto de los botones */
+    background: #026F6E; /* Cambia el color de fondo de los botones */
+    border-radius: 20px;
+  }
+
+  .alert-title.sc-ion-alert-md {
+    color:  #09456C;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    font-weight: bold;
+}
+
+  .alert-message.sc-ion-alert-md {
+    max-height: 266px;
+    font-size: 16px;
+    color: #09456C;
+    text-align: center;
+}
+
+  .alert-sub-title.sc-ion-alert-md {
+    color:  #09456C;
+    font-size: 16px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+
+
+}
+
+.native-input.sc-ion-input-md{
+  color:#026F6E !important;
+}
+//CALENDARIO INICIO
+
+:root {
+  --ion-color-rose: #831843;
+  --ion-color-rose-rgb: 131, 24, 67;
+  --ion-color-rose-contrast: #ffffff;
+  --ion-color-rose-contrast-rgb: 255, 255, 255;
+  --ion-color-rose-shade: #73153b;
+  --ion-color-rose-tint: #8f2f56;
+
+  --ion-text-color: #09456C;
+  --ion-text-color-rgb: 136, 19, 55;
+
+  --ion-color-step-50: #f9e6e9;
+  --ion-color-step-100: #f3dbdf;
+  --ion-color-step-150: #09456C;
+  --ion-color-step-200: #e7c5cd;
+  --ion-color-step-250: #09456C;
+  --ion-color-step-300: #09456C;
+  --ion-color-step-350: #09456C;
+  --ion-color-step-400: #09456C;
+  --ion-color-step-450: #09456C;
+  --ion-color-step-500: #09456C;
+  --ion-color-step-550: #09456C;
+  --ion-color-step-600: #09456C;
+  --ion-color-step-650: #09456C;
+  --ion-color-step-700: #09456C;
+  --ion-color-step-750: #09456C;
+  --ion-color-step-800: #09456C;
+  --ion-color-step-850: #09456C;
+  --ion-color-step-900: #94294a;
+  --ion-color-step-950: #8e1e40;
+
+  --ion-color-calendario: #1CA39E;
+	--ion-color-calendario-rgb: 28,163,158;
+	--ion-color-calendario-contrast: #ffffff;
+	--ion-color-calendario-contrast-rgb: 255,255,255;
+	--ion-color-calendario-shade: #198f8b;
+	--ion-color-calendario-tint: #33aca8;
+
+  --ion-color-faq: #1CA39E;
+  --ion-color-faq-rgb: 131, 24, 67;
+  --ion-color-faq-contrast: white;
+  --ion-color-faq-contrast-rgb: 255, 255, 255;
+  --ion-color-faq-shade: #1CA39E;
+  --ion-color-faq-tint: #1CA39E;
+
+  --ion-color-historial: #1CA39E;
+  --ion-color-historial-rgb: 131, 24, 67;
+  --ion-color-historial-contrast: white;
+  --ion-color-historial-contrast-rgb: 255, 255, 255;
+  --ion-color-historial-shade: #1CA39E;
+  --ion-color-historial-tint: #1CA39E;
+}
+
+.ion-color-rose {
+  --ion-color-base: #09456C;
+  
+  --ion-color-base-rgb: #000;
+  --ion-color-contrast: var(--ion-color-rose-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-rose-contrast-rgb);
+  --ion-color-shade: var(--ion-color-rose-shade);
+  --ion-color-tint: var(--ion-color-rose-tint);
+}
+.ion-color-calendario {
+	--ion-color-base: #09456C;
+	--ion-color-base-rgb: #03253b;
+	--ion-color-contrast: #09456C;
+	--ion-color-contrast-rgb: #09456C;
+	--ion-color-shade: #09456C;
+	--ion-color-tint: #09456C;
+}
+ion-datetime {
+  --background: #fff1f2;
+  --background-rgb: 255, 241, 242;
+
+  border-radius: 16px;
+  box-shadow: #09456C 0px 10px 15px -3px;
+  --ion-text-color: black;
+}
+
+
+//CALENDARIO FIN
+
+.ion-color-faq {
+  --ion-color-base: var(--ion-color-faq);
+  --ion-color-base-rgb: var(--ion-color-faq-rgb);
+  --ion-color-contrast: var(--ion-color-faq-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-faq-contrast-rgb);
+  --ion-color-shade: var(--ion-color-faq-shade);
+  --ion-color-tint: var(--ion-color-faq-tint);
+}
+
+.ion-color-historial {
+  --ion-color-base: var(--ion-color-historial);
+  --ion-color-base-rgb: var(--ion-color-historial-rgb);
+  --ion-color-contrast: var(--ion-color-historial-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-historial-contrast-rgb);
+  --ion-color-shade: var(--ion-color-historial-shade);
+  --ion-color-tint: var(--ion-color-historial-tint);
+}
+
+
+@font-face {   
+  font-family: 'Cabin';    //This is what we are going to call
+  src: url('./assets/fonts/Cabin-Medium.ttf');
+}
+
+@font-face {   
+  font-family: 'Barlow-medium';    //This is what we are going to call
+  src: url('./assets/fonts/Barlow-Medium.ttf');
+}
+
+@font-face {   
+  font-family: 'Barlow-regular';    //This is what we are going to call
+  src: url('./assets/fonts/Barlow-Regular.ttf');
+}
+
+
+ion-modal {
+  
+  --border-radius: 20px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  background-color: rgba(0, 0, 0, 0.411);
+}
+
+ion-modal ion-content {
+  --background: rgb(250, 250, 250);
+}
+
+
+
+.custom-alert-button {
+  border-radius: 20px; // ajusta el valor según sea necesario
+  margin: 0 5px; // ajusta el espacio entre los botones según sea necesario
+}
+
+button.alert-button.custom-alert-button {
+  background-color: var(--ion-color-success);
+  color: var(--ion-color-success-contrast);
+  justify-content: center!important;
+  border-radius: 15px;
+  margin-left: 8px;
+}
+
+
+.alert-button-group.sc-ion-alert-md {
+  justify-content: center!important;
+}
+

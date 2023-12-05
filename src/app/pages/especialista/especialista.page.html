@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-title class="texto-header"> Especialistas </ion-title>
+    <ion-buttons slot="start" style="color:#ffffff;">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let especialista of especialistas">
+    <img class="imagen-card circular-image" [src]="especialista.IMAGEN_PERFIL ? 'https://www.sensecional.xyz/sense/' + especialista.IMAGEN_PERFIL : '/assets/icon/perfil.png'" /><ion-card-header>
+        <ion-card-title>
+          {{ especialista.NOMBRE_ESPECIALISTA }}
+          {{ especialista.AP_PATERNO_ESPECIALISTA }} 
+          {{ especialista.AP_MATERNO_ESPECIALISTA }}
+        </ion-card-title>
+     <div class="subtitle-box">
+      <ion-card-subtitle>
+        <ion-icon name="mail"></ion-icon> {{ especialista.EMAIL_ESPECIALISTA }} <br>
+        <ion-icon name="man"></ion-icon> {{ especialista.EDAD_ESPECIALISTA }} años <br>
+        <ion-icon name="globe"></ion-icon> {{ especialista.NACIONALIDAD_ESPECIALISTA }} 
+      </ion-card-subtitle>
+    </div>
+    </ion-card-header>
+    <ion-card-content>
+      Puntuación:
+      <ion-icon class="color-estrellas" name="{{ star }}" *ngFor="let star of especialista.stars"></ion-icon>
+      <ion-button class="custom-button" (click)="agendarHora(especialista.ID_ESPECIALISTA)">Agendar Hora</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+    <ion-infinite-scroll-content  class="custom-infinite-scroll"
+                                loadingText="Cargando especialistas..."
+                                loadingSpinner="bubbles"
+    ></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

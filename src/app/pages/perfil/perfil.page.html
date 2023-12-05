@@ -1,0 +1,166 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-title class="texto-header">Mi Perfil</ion-title>
+    <ion-buttons slot="start" style="color:#ffffff;">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+  </ion-header>
+  
+  <ion-button class="editar" *ngIf="visitante == 0"  routerLink="/formulario-perfil" slot="fixed">
+    <ion-icon slot="icon-only" name="color-wand-outline" size="large"></ion-icon>
+  </ion-button>
+
+  <ion-avatar class="item-avatar">
+    <ng-container *ngIf="imagen_perfil === undefined || imagen_perfil === null; else perfilConImagen">
+      <!-- Mostrar el avatar de Ionic si no hay imagen de perfil -->
+      <img alt="avatar-ionic" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ng-container>
+    <ng-template #perfilConImagen>
+      <!-- Mostrar la imagen de perfil del usuario si existe -->
+      <img alt="foto-perfil" [src]="imagen_perfil" />
+    </ng-template>
+  </ion-avatar>
+  
+  
+  <div class="text-center">
+    <ion-chip *ngIf="visitante == 0"  routerLink="/formulario-perfil">{{ nombre_usuario }} {{ap_paterno_usuario}}</ion-chip>
+  </div>
+  <ion-accordion-group expand="inset">
+    <ion-accordion value="first">
+      <ion-item slot="header" color="faq">
+        <ion-label><ion-icon name="person"></ion-icon>  Datos Personales</ion-label>
+      </ion-item>
+      <div class="acordeon" slot="content">
+        <ion-list lines="full" class="c-acordeon">
+          <ion-item class="c-item item-inner">
+            <ion-label><b>RUT:</b> {{ rut_usuario }}</ion-label>
+          </ion-item>
+          <ion-item class="item-inner">
+            <ion-label><b>Nombre:</b> {{ nombre_usuario }}</ion-label>
+          </ion-item>
+          <ion-item class="item-inner">
+            <ion-label><b>Apellidos:</b> {{ ap_paterno_usuario }} {{ ap_materno_usuario }}</ion-label>
+          </ion-item>
+          <ion-item class="item-inner">
+            <ion-label><b>Edad:</b> {{ edad_usuario }}</ion-label>
+          </ion-item>
+          <ion-item class="item-inner">
+            <ion-label><b>Nacionalidad:</b> {{ nacionalidad_usuario }}</ion-label>
+          </ion-item>
+        </ion-list></div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="faq">
+        <ion-label><ion-icon name="call"></ion-icon>  Contacto</ion-label>
+      </ion-item>
+      <div class="acordeon" slot="content">
+        <ion-list lines="full" class="c-acordeon">
+          <ion-item class="item-inner">
+            <ion-label><b>Teléfono:</b> {{celular_usuario}}</ion-label>
+          </ion-item>
+          <ion-item class="item-inner">
+            <ion-label><b>Email:</b> {{email_usuario}}</ion-label>
+          </ion-item>
+          <ion-item class="item-inner">
+            <ion-label><b>Dirección:</b>  {{direccion_usuario}} </ion-label>
+          </ion-item>
+          <ion-item class="item-inner">
+            <ion-label><b>Comuna:</b> {{id_comuna}}  </ion-label>
+          </ion-item>
+          <ion-item class="item-inner">
+            <ion-label><b>Región:</b> {{id_region}}  </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="third">
+      <ion-item slot="header" color="faq">
+        <ion-label><ion-icon name="happy"></ion-icon>  Personalidad</ion-label>
+      </ion-item>
+      <div class="acordeon" slot="content">
+        <ion-button *ngIf="visitante == 0" class="boton" shape="round" expand="block" size="small" (click)="abrirModal(1)">Agregar y editar</ion-button>
+
+        <div class="ion-chip-wrap">
+          <ion-chip class="chip2" *ngFor="let personalidad of personalidades">
+            <ion-label>{{ personalidad.personalidad }}</ion-label>
+          </ion-chip>
+        </div>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="fourth">
+      <ion-item slot="header" color="faq">
+        <ion-label><ion-icon name="extension-puzzle"></ion-icon> Hobbies</ion-label>
+      </ion-item>
+      <div class="acordeon" slot="content">
+        <ion-button *ngIf="visitante == 0" class="boton" shape="round" expand="block" size="small" (click)="abrirModal(2)">Agregar y editar</ion-button>
+        <div class="ion-chip-wrap">
+          <ion-chip class="chip2" *ngFor="let hobbie of hobbies">
+            <ion-label>{{ hobbie.hobbie }}</ion-label>
+          </ion-chip>
+        </div>
+
+      </div>
+    </ion-accordion>
+    <ion-accordion value="fifth" *ngIf="tipo_usuario == 1">
+      <ion-item slot="header" color="faq">
+        <ion-label><ion-icon name="ribbon"></ion-icon>  Especialización</ion-label>
+      </ion-item>
+      <div class="acordeon" slot="content">
+        <ion-list lines="full" class="c-acordeon">
+          <ion-item class="item-inner">
+            <ion-label><b>Descripción:</b> {{celular_usuario}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="tenth" *ngIf="tipo_usuario == 1">
+      <ion-item slot="header" color="faq">
+        <ion-label><ion-icon name="cash"></ion-icon>  Tarifa</ion-label>
+      </ion-item>
+      <div class="acordeon" slot="content">
+        <ion-list lines="full" class="c-acordeon">
+          <ion-item class="item-inner">
+            <ion-label><b>Valor:</b> {{celular_usuario}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="eighth">
+      <ion-item slot="header" color="faq">
+        <ion-label><ion-icon name="mail"></ion-icon>  Notificaciones</ion-label>
+      </ion-item>
+      <div class="acordeon" slot="content">
+        <ion-list lines="full" class="c-acordeon">
+          <ion-item class="item-inner">
+            <ion-label><ion-toggle aria-label="Secondary toggle" color="secondary" [checked]="true"><ion-icon name="mail-unread-outline" class="icono"></ion-icon>  Correo Electrónico</ion-toggle></ion-label>
+          </ion-item>
+          <ion-item class="item-inner">
+            <ion-label><ion-toggle aria-label="Secondary toggle" color="secondary" [checked]="true"><ion-icon name="logo-whatsapp" class="icono"></ion-icon>  Whatsapp</ion-toggle> </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="nineth">
+      <ion-item slot="header" color="faq">
+        <ion-label><ion-icon name="megaphone"></ion-icon>  Reportar</ion-label>
+      </ion-item>
+      <div class="acordeon" slot="content">En caso de que hayas vivido una experiencia que vulnere los términos y condiciones de uso de Sense, completa el siguiente formulario para denunciar la situación.<br>
+        <ion-button shape="round" class="ion-button" routerLink="/reportar">Reportar</ion-button>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <div class="acordeon-final"></div>
+
+</ion-content>
+
+<div class="perfil-footer">
+  <h6 class="texto-footer"> <ion-icon slot="start" src="assets/icon/logo_blanco.svg"></ion-icon> Sense - Tu bienestar comienza aquí</h6>
+</div>

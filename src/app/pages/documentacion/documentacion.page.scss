@@ -1,0 +1,73 @@
+
+ion-content {
+    --background: transparent; 
+    background-image: url('/assets/images/fondo_login.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+  }
+
+.texto-header {
+    text-align: left;
+    color: #ffffff;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+  .header {
+    --background: #09456C;    
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  ion-button {
+    margin: 10px;
+    width: 80%;
+    max-width: 300px; /* O el ancho máximo deseado */
+    color: #09456C;
+  }
+
+  ion-card-title {
+    text-align: center;
+    color: #ffffff;
+  }
+
+  ion-card-content {
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  ion-card {
+    --background: #1CA39E; 
+  }
+
+  .custom-button {
+    margin: 10px;
+    width: 80%;
+    max-width: 300px; /* O el ancho máximo deseado */
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    --border-radius: 23px;
+    margin-inline: 10px;
+    padding-top: 5px;
+    color: #ffffff;
+    --background: #026F6E;
+    font-family:Arial, Helvetica, sans-serif;
+    height: 45px;
+    padding-left: 45px;
+}
+
+p{
+    color: red;
+}
+
+/* documentacion.page.scss */
+
+li {
+  color: #FFFFFF; /* Cambiar el color del texto a blanco */
+}

@@ -1,0 +1,89 @@
+.fade-out-up {
+    animation: fadeOutUp 0.5s ease-out;
+  }
+  
+  @keyframes fadeOutUp {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+  }
+
+
+  .fade-out-down {
+    animation: fadeOutDown 0.5s ease-out;
+  }
+  
+  @keyframes fadeOutDown {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+  }
+
+
+
+  .fade-out-slide-up {
+    animation: fadeOutSlideUp 0.5s ease-out;
+  }
+  
+  @keyframes fadeOutSlideUp {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+
+
+
+  .slide-down {
+    animation: slideDown 0.5s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+   ion-toolbar {
+    --background: #09456C;    
+    }
+
+
+    ion-content {
+      --background: transparent; 
+      background-image: url('/assets/images/fondo-agua-mar.jpg');
+      background-size: cover; 
+      background-repeat: no-repeat;
+    }
+
+    ion-row, ion-col, ion-item, ion-label, ion-select, ion-list, ion-button {
+      --background: #1CA39E;
+      --color: white;
+    }
+    
+    ion-text {
+      --text-color: white;
+    }
+
+
+  

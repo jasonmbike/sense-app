@@ -1,0 +1,32 @@
+.ion-chip-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px; /* Ajusta el espacio entre los chips según tus preferencias */
+  }
+  
+  
+  ion-chip {
+    min-width: 0; /* Permite que los chips se contraigan en lugar de crecer */
+    flex-grow: 1; /* Permite que los chips ocupen todo el ancho disponible */
+  }
+
+
+  .modal-content {
+    overflow-y: auto;
+  }
+
+  ion-modal ion-content {
+    --offset-top: unset !important;
+    --offset-bottom: unset !important;
+    overflow: auto !important;
+    }
+
+    .texto-header {
+      text-align: left;
+      color: #ffffff;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+  
+  .header {
+  --background: #09456C;    
+  }

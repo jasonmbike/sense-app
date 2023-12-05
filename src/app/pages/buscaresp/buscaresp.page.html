@@ -1,0 +1,158 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="header">
+    <ion-title class="texto-header">Buscar Especialista</ion-title>
+    <ion-buttons slot="start" style="color:#ffffff;">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-grid [fixed]="true">
+
+    <ion-row class="ion-justify-content-center tipo-sesion">
+      <ion-text style="padding: 10px; font-size: 15px;">¿Preparad@ para encontrar a tu especialista?</ion-text>
+    </ion-row>
+    <ion-row class="ion-justify-content-center tipo-sesion">
+      <ion-text style="padding-top: 10px;">¿Qué tipo de sesion estas buscando?</ion-text>
+
+      <ion-row style="padding-bottom: 10px;">
+        <ion-chip  *ngFor="let tipo of tiposDeSesion" 
+          [color]="tipo.seleccionado ? 'success' : 'medium'" 
+          (click)="seleccionarChip2(tipo, tiposDeSesion)">
+        <ion-label>{{ tipo.tipo }}</ion-label>
+      </ion-chip>
+      </ion-row>
+
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center tipo-sesion" >
+      <ion-text style="padding-top: 10px;">¿Qué genero prefieres?</ion-text>
+
+      <ion-row style="padding-bottom: 10px;">
+        <ion-chip *ngFor="let genero of generos" 
+          [color]="genero.seleccionado ? 'success' : 'medium'" 
+          (click)="seleccionarChip3(genero, generos)">
+        <ion-label>{{ genero.genero }}</ion-label>
+      </ion-chip>
+      </ion-row>
+      
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center tipo-sesion">
+      <ion-text style="padding-top: 10px;">¿Como prefieres que sea tu especialista?</ion-text>
+
+      
+    
+      <ion-col size="12">
+
+      <ion-list>
+        <!-- Encabezado del list plegable -->
+        <ion-item (click)="toggleList()" >
+          <ion-label>Personalidad</ion-label>
+          <ion-icon slot="end" [name]="expanded ? 'chevron-up' : 'chevron-down'"></ion-icon>
+        </ion-item>
+    
+        <!-- Contenido del list plegable -->
+        <ion-item *ngIf="showList">
+          <div class="ion-chip-wrap">
+            <ion-chip *ngFor="let personalidad of personalidades" [color]="personalidad.seleccionado ? 'success' : 'medium'" (click)="seleccionarChip(personalidad)">
+              <ion-label>{{ personalidad.personalidad }}</ion-label>
+            </ion-chip>
+          </div>
+        </ion-item>
+      </ion-list>
+      </ion-col>
+
+      <ion-col size="12">
+
+        <ion-list>
+          <!-- Encabezado del list plegable -->
+          <ion-item (click)="toggleList2()" >
+            <ion-label>Hobbies</ion-label>
+            <ion-icon slot="end" [name]="expanded2 ? 'chevron-up' : 'chevron-down'"></ion-icon>
+          </ion-item>
+      
+          <!-- Contenido del list plegable -->
+          <ion-item *ngIf="showList2">
+            <div class="ion-chip-wrap">
+                <ion-chip *ngFor="let hobbie of hobbies" [color]="hobbie.seleccionado ? 'success' : 'medium'" (click)="seleccionarChip(hobbie)">
+                <ion-label>{{ hobbie.hobbie }}</ion-label>
+              </ion-chip>
+            </div>
+            <!-- Otros elementos que desees -->
+          </ion-item>
+        </ion-list>
+        </ion-col>
+    </ion-row>
+
+
+
+    <ion-row style="padding-top: 20px; padding-bottom: 20px;" class="ion-justify-content-center">
+      <ion-button (click)="obtenerChipsSeleccionados()">buscar</ion-button>
+    </ion-row>
+
+
+  
+
+    <ion-row style="padding-top: 20px; padding-bottom: 20px;" *ngIf="noencontrado" class="ion-justify-content-center tipo-sesion">
+      <ion-label>
+        <h2 class="negro">No se encontraron especialistas :(</h2>
+        <p class="negro">Prueba con otros filtros ;)</p>
+        
+      </ion-label>
+    
+    <ion-row class="ion-justify-content-center">
+      <img src="/assets/images/page-not-found.png" alt="no-encontrado" style="width: 20%; height: auto;">
+    </ion-row>
+    </ion-row>
+
+
+
+
+
+    <ion-list class="resultados" *ngIf="resultados">
+      <ion-list-header class="resultados">
+        Resultados de búsqueda
+      </ion-list-header>
+    
+      <ion-item class="negro" *ngFor="let especialista of especialistas" (click)="mostrarAlerta(especialista)">
+        <ion-avatar  class="item-avatar avatar-container">
+          <ng-container *ngIf="especialista.IMAGEN_PERFIL !== undefined && especialista.IMAGEN_PERFIL !== null; else perfilSinImagen">
+            <!-- Mostrar la imagen de perfil del especialista si existe -->
+            <img alt="foto-perfil" [src]="'https://www.sensecional.xyz/sense/' + especialista.IMAGEN_PERFIL" />
+          </ng-container>
+          <ng-template #perfilSinImagen>
+            <!-- Mostrar el avatar de Ionic si no hay imagen de perfil -->
+            <img alt="avatar-ionic" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ng-template>
+        </ion-avatar>
+    
+        <ion-label class="negro">
+          <h2>{{ especialista.NOMBRE_ESPECIALISTA }}</h2>
+          <h2 class="negro">{{ especialista.NOMBRE_REGION }}</h2>
+    
+          <ion-row>
+            <ion-col class="columna0">
+              <p class="negro">Edad: {{ especialista.EDAD_ESPECIALISTA }}</p>
+            </ion-col>
+    
+            <ion-col class="columna">
+              <div class="puntuacion negro">
+                Puntuación:
+                <ion-icon *ngFor="let i of [1, 2, 3, 4, 5]" [name]="i <= especialista.PUNTUACION_ESPECIALISTA ? 'star' : 'star-outline'"></ion-icon>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    
+    
+
+  </ion-grid>
+
+
+
+</ion-content>

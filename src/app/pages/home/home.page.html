@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-title class="texto-header"></ion-title>
+    <ion-buttons slot="start" style="color:#ffffff;">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div class="diva" >
+<ion-card class="div-rojo" *ngIf="verificado && user">
+  <!-- Texto adentro del ion-card -->
+  <ion-card-content>
+    Su cuenta se encuentra pendiente de verificacion.
+  </ion-card-content>
+</ion-card>
+</div>
+  <ion-content class="ion-padding"> 
+    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <div >
+      <ion-slides pager="true">
+        <ion-slide>
+          <img src="assets/images/1.png" alt="Imagen 1" />
+        </ion-slide>
+        <ion-slide>
+          <img src="assets/images/2.png" alt="Imagen 2" />
+        </ion-slide>
+        <ion-slide>
+          <img src="assets/images/3.png" alt="Imagen 3" />
+        </ion-slide>
+        <ion-slide>
+          <img src="assets/images/4.png" alt="Imagen 4" />
+        </ion-slide>
+        <ion-slide>
+          <img src="assets/images/5.png" alt="Imagen 5" />
+        </ion-slide>
+      </ion-slides>
+    </div>
+
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+    <div *ngIf="tipo_usuario == 2">
+      <ion-button (click)="BuscarEsp()" class="boton"  shape="round">Buscar especialista <ion-icon slot="end" name="search-outline"></ion-icon></ion-button>
+    </div>
+  </ion-col>
+</ion-row>
+    <!-- <ion-list>
+      <ion-item *ngFor="let result of results">
+        <ion-label>{{ result }}</ion-label>
+      </ion-item>
+    </ion-list> -->
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" size-md="4" size-lg="2">
+          <ion-card *ngIf="tipo_usuario == 2">
+          <img alt="Especialista" src="assets/images/especialistas2.png" />
+            <ion-card-header>
+              <ion-card-title class="ion-card-title" (click)="Especialistas()">Especialistas</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+          <ion-card *ngIf="tipo_usuario == 1 && menuActivado">
+            <img alt="Especialista" src="assets/images/partes-de-la-agenda.jpg" />
+              <ion-card-header>
+                <ion-card-title class="ion-card-title" (click)="EditarHorario()">Mi agenda</ion-card-title>
+              </ion-card-header>
+            </ion-card>
+        </ion-col>
+        <ion-col size="6" size-md="4" size-lg="2">
+        <ion-card *ngIf="tipo_usuario == 1 && menuActivado">
+          <img alt="Especialista" src="assets/images/horas.png" />
+            <ion-card-header>
+              <ion-card-title class="ion-card-title" (click)="IngresarHora()">Crea tu agenda</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+          <ion-card *ngIf="tipo_usuario == 2">
+            <img alt="Agenda" src="assets/images/historial2.png" />
+              <ion-card-header>
+                <ion-card-title class="ion-card-title" (click)="Historial()">Historial</ion-card-title>
+              </ion-card-header>
+            </ion-card>
+        </ion-col>
+        <ion-col size="6" size-md="4" size-lg="2">
+          <ion-card *ngIf="tipo_usuario == 1">
+            <img alt="Especialista" src="assets/images/documentacion.jpg" />
+              <ion-card-header>
+                <ion-card-title class="ion-card-title" (click)="Documentacion()">Documentación</ion-card-title>
+              </ion-card-header>
+            </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    <ion-button expand="block" shape="round" class="boton" routerLink="/faq">Preguntas Frecuentes</ion-button>
+
+  </ion-content>
+  
+    <div class="home-footer">
+      <h6 class="texto-footer"> <ion-icon slot="start" src="assets/icon/logo_blanco.svg"></ion-icon> Sense - Tu bienestar comienza aquí</h6>
+    </div>
+      
+
+
+
+

@@ -1,0 +1,103 @@
+.ion-chip-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px; /* Ajusta el espacio entre los chips según tus preferencias */
+  }
+  
+  ion-chip {
+    min-width: 0; /* Permite que los chips se contraigan en lugar de crecer */
+    flex-grow: 1; /* Permite que los chips ocupen todo el ancho disponible */
+  }
+
+  ion-chip:active {
+    background-color: #21bd02; /* Puedes ajustar esto según tus preferencias */
+    color: #fff; /* Puedes ajustar el color del texto cuando está seleccionado */
+  }
+
+  .avatar-container {
+    margin-right: 10px; 
+  }
+
+
+  .puntuacion {
+    display: flex;
+  }
+  
+  ion-icon {
+    font-size: 16px; /* Ajusta según tus necesidades */
+    color: gold;    /* Color de las estrellas rellenas */
+  }
+
+  .columna {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .columna0 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0px;
+  }
+
+
+  ion-content {
+    --background: transparent;
+    background-image: url("/assets/images/fondo_login.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    --color: black;
+  }
+
+  .resultados {
+    border-radius: 10px;
+    margin: 5px;
+    background-color: #09456C!important;  
+    --color: white;
+    font-size: 20px;
+  }
+
+  .tipo-sesion {
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px 30px 0px 30px;
+  }
+
+
+  .header {
+    --background: #09456C;    
+  }
+
+  .texto-header {
+    text-align: left;
+    color: #ffffff;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+  .negro {
+    --color: white;
+    --background: #1CA39E;
+  }
+
+
+  
+
+
+  .alert-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .perfil-button,
+  .agenda-button {
+    border-radius: 20px; // Ajusta el valor según el redondeo que desees
+    flex: 1;
+    margin: 0 5px; // Ajusta el espacio entre los botones según sea necesario
+  }
+
+
+  .custom-alert-button {
+    border-radius: 20px; // ajusta el valor según sea necesario
+    margin: 0 5px; // ajusta el espacio entre los botones según sea necesario
+  }

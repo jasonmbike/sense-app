@@ -1,0 +1,6 @@
+{
+    "/api": {
+      "target": "https://webpay3gint.transbank.cl",
+      "secure": false
+    }
+  }
